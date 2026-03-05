@@ -5,20 +5,16 @@ function generateQRCode() {
     const toast = document.getElementById("toast");
     const button = document.querySelector(".btn");
 
-    // Validation
     if (!inputText) {
         showToast("Please enter text or a URL", "error");
         return;
     }
 
-    // Disable button while generating
     button.disabled = true;
     button.innerText = "Generating...";
 
-    // Generate QR URL
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(inputText)}&size=200x200`;
 
-    // Load QR code
     qrCodeImage.onload = () => {
         button.disabled = false;
         button.innerText = "Generate QR";
@@ -35,8 +31,6 @@ function generateQRCode() {
     qrCodeImage.style.display = "block";
 }
 
-
-/* Toast function */
 function showToast(message, type = "success") {
 
     const toast = document.getElementById("toast");
@@ -56,9 +50,8 @@ function showToast(message, type = "success") {
 }
 
 
-/* Optional UX improvement: clear QR when user edits input */
-
 document.getElementById("input-text").addEventListener("input", () => {
     const qrCodeImage = document.getElementById("qrcode");
     qrCodeImage.style.display = "none";
+
 });
