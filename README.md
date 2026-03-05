@@ -5,7 +5,7 @@ This application allows users to enter text or a URL and instantly generate a QR
 
 FEATURES
 
-* Generate QR codes from text or URLs**
+* Generate QR codes from text or URLs
 * Responsive layout
 * Input validation
 * Toast notifications for user feedback
